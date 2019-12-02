@@ -1,0 +1,6 @@
+com\MGL_Task1\service\Game_Service_Impl.class
+com\MGL_Task1\controller\MGL_Task1_Controller.class
+com\MGL_Task1\model\Game.class
+com\MGL_Task1\model\Review.class
+com\MGL_Task1\service\Game_Service.class
+com\MGL_Task1\model\Company.class
