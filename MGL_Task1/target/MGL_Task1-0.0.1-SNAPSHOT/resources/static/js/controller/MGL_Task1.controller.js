@@ -1,35 +1,26 @@
 'use strict';
- 
-angular.module('MGL_Task1_app').controller('MGL_Task1_Controller', ['$http','MGL_Task1_Service', 
-	function($http,MGL_Task1_Service) {
-    var self = this;
-    self.game={game_id:null,game_name:'',game_genre:''};
-    self.games=[];
-    
-    self.submit = submit;
-    
-    fetchAllGames();
-    
-    function fetchAllGames(){
-    	MGL_Task1_Service.fetchAllGames()
-    					 .then(
-    							 function(allGames){
-    								 self.games = allGames.data;
-    							 }
-    					 );
-    }
-    
-    function addGame(game){
-    	MGL_Task1_Service.createGame(game);
-    	fetchAllGames();
-    }
-    
-    function submit() {
-        if(self.game.game_id===null){
-            addGame(self.game);
-        }else{
-            updateGame(self.game, self.game.game_id);
-        }
-    }
 
-}]);
+angular.module('MGL_Task1_app').controller('MGL_Task1_Controller',
+		[ 'MGL_Task1_Service', function(MGL_Task1_Service) {
+			var self = this;
+			self.game = {
+				game_id : '',
+				game_name : '',
+				game_genre : ''
+			};
+			self.games = [];
+
+			self.fetchAllGames = function(){
+				MGL_Task1_Service.fetchAllGames().then(function(data) {
+					self.games = data;
+				});
+			}
+
+			self.addGame = function(){
+				return MGL_Task1_Service.createGame(self.game).then( function() {
+				self.fetchAllGames();
+				});
+			}
+
+			self.fetchAllGames();
+		} ]);

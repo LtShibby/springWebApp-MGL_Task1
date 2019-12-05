@@ -15,8 +15,8 @@
         }
     </style>
     <link rel="apple-touch-icon" sizes="180x180" href="/android-chrome-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="resources/static/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="resources/static/images/favicon-16x16.png">
 </head>
 
 <body>
@@ -24,7 +24,6 @@
         <a class="navbar-brand" href="${pageContext.request.contextPath}">
 			<img src="resources/static/images/MGLlogo.png" width="90" height="60" alt="">
 		</a>
-        <a class="nav-item nav-link" href="/MGL_Task1/">Home</a>
         <a class="nav-item nav-link" href="games">Games</a>
         <a class="nav-item nav-link" href="review">Review</a>
     </nav>

@@ -3,7 +3,6 @@
     <!DOCTYPE html>
     <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
         <html>
-
         <head>
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.8/angular.min.js"></script>
         <script src="resources/static/js/app.js" /></script>
@@ -28,21 +27,20 @@
                 <a class="navbar-brand" href="${pageContext.request.contextPath}">
 			<img src="resources/static/images/MGLlogo.png" width="90" height="60" alt="">
 		</a>
-                <a class="nav-item nav-link" href="/MGL_Task1/">Home</a>
                 <a class="nav-item nav-link" href="games">Games</a>
                 <a class="nav-item nav-link" href="review">Review</a>
             </nav>
             <div id="ReviewFormDiv" class="container">
                 <br>
-                <form name="reviewWeb" method="POST" action="addReview">
+                <form name="submitReviewForm" method="POST" action="addReview">
                     <table class="table table-dark text-light">
                         <tr>
-                            <td><label>Review Body</label></td>
-                            <td><textarea name="reviewBody" class="form-control" required></textarea></td>
+                            <td><label>Review Body*</label></td>
+                            <td><textarea name="reviewBody" class="form-control" placeholder="What did you like/dislike about the game? [required]" required></textarea></td>
                         </tr>
                         <tr>
                             <td><label>Author</label></td>
-                            <td><input type="text" name="author" class="form-control"></input>
+                            <td><input type="text" name="author" class="form-control" placeholder="Your name (leave black to leave an anonymous review)"></input>
                             </td>
                         </tr>
                         <tr>

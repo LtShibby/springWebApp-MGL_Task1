@@ -22,7 +22,6 @@
             <a class="navbar-brand" href="${pageContext.request.contextPath}">
 			<img src="resources/static/images/MGLlogo.png" width="90" height="60" alt="">
 		</a>
-            <a class="nav-item nav-link" href="/MGL_Task1/">Home</a>
             <a class="nav-item nav-link" href="games">Games</a>
             <a class="nav-item nav-link" href="review">Review</a>
         </nav>
@@ -32,19 +31,19 @@
             <tr>
                 <td>ReviewBody</td>
                 <td>
-                    <p>${reviewBody}</p>
+                    <p>${submittedReview.reviewBody}</p>
                 </td>
             </tr>
             <tr>
                 <td>Author</td>
                 <td>
-                    <p>${author}</p>
+                    <p>${submittedReview.author}</p>
                 </td>
             </tr>
             <tr>
                 <td>Rating</td>
                 <td>
-                    <p>${rating}</p>
+                    <p>${submittedReview.rating}</p>
                 </td>
             </tr>
         </table>

@@ -8,7 +8,6 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -36,11 +35,11 @@ public class MGL_Task1_Controller {
 	}
 
 	@RequestMapping(value = "/addReview", method = RequestMethod.POST)
-	public String addReview(@ModelAttribute("reviewWeb") Review review, ModelMap model) {
-		model.addAttribute("reviewBody", review.getReviewBody());
-		model.addAttribute("author", review.getAuthor());
-		model.addAttribute("rating", review.getRating());
-		return "result";
+	public ModelAndView addReview(Review review, ModelMap model) {
+		if(review.getAuthor().equals("")) {
+			review.setAuthor("anonymous");
+		}
+		return new ModelAndView("result", "submittedReview", review);
 	}
 
 	@RequestMapping(value = "/games", method = RequestMethod.GET)
